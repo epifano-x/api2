@@ -1,0 +1,31 @@
+@URL=http://localhost:3000/users
+
+### Obter todos
+GET {{URL}}
+
+### Obter pelo ID
+GET {{URL}}/651da683753b457b93f7418a
+
+### 
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "joao",
+    "email": "joao@gmail.com",
+    "password": "1234",
+    "phone": "123123123"
+}
+### 
+PUT {{URL}}/651da7192a493098f0928c87
+
+Content-Type: application/json
+
+{
+    "name": "joao1",
+    "email": "joao@gmail.com",
+    "password": "1234",
+    "phone": "123123123"
+}
+### 
+DELETE {{URL}}/651da71a2a493098f0928c89
