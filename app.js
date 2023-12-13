@@ -27,8 +27,11 @@ var app = express();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Adicione os métodos que você precisa permitir
+  res.header('Access-Control-Allow-Credentials', 'true'); // Adicione esta linha para permitir credenciais
   next();
 });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
