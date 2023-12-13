@@ -5,7 +5,7 @@ const Nota = require('../models/Nota');
 const { default: mongoose } = require('mongoose');
 
 const corsOptions = {
-  origin: 'http://localhost:3001', // Substitua pelo endereço do seu aplicativo React
+  origin: 'http://localhost:3000', // Substitua pelo endereço do seu aplicativo React
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   credentials: true,
   optionsSuccessStatus: 204,
