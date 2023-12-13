@@ -25,12 +25,13 @@ var app = express();
 
 // Configurar CORS para permitir solicitações de http://localhost
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Adicione os métodos que você precisa permitir
-  res.header('Access-Control-Allow-Credentials', 'true'); // Adicione esta linha para permitir credenciais
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
+
 
 app.options('/nota', (req, res) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost');
