@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Substitua pelo endereço do seu aplicativo React
+  origin: 'http://localhost:3001',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   credentials: true,
   optionsSuccessStatus: 204,
@@ -49,13 +49,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/nota', notasRouter);
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  next();
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
