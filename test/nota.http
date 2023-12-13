@@ -1,0 +1,33 @@
+@URL=http://localhost:3001/nota
+
+### Obter todos
+GET {{URL}}
+
+### Obter pelo ID
+GET {{URL}}/65389648afeb75bb915c2566
+
+### 
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "nota": "4",
+    "comentario": "asdasdasd",
+    "passeioId": "efa09515-4a26-4cf2-8d7b-73217461c93f",
+    "pessoa": "b@a.com"
+}
+
+###
+PUT {{URL}}/65389648afeb75bb915c2566
+
+Content-Type: application/json
+
+{
+    "pessoa": { "id": 1, "nome": "Juca" },
+    "passeioId": 2,
+    "comentario": "abcdefg",
+    "nota": "2"
+}
+
+### 
+DELETE {{URL}}/65389632afeb75bb915c2563
