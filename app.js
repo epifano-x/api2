@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 const MONGO_URL = process.env.MONGO_URL;
@@ -12,17 +12,23 @@ mongoose
   .connect(MONGO_URL)
   .then(() => {
     console.log(`Conectado ao MongoDB: ${MONGO_URL}`);
-
   })
   .catch(err => {
-    console.log(`falha ao conectar com o MongoDB`);
+    console.log(`Falha ao conectar com o MongoDB`);
     console.log(err);
-  })
+  });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Configurar CORS para permitir solicitações de http://localhost
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
