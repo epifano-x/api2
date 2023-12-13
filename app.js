@@ -32,6 +32,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.options('/nota', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.send();
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
