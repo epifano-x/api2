@@ -7,5 +7,5 @@ COPY . .
 ENV PATH /app/node_modeules/.bin:$PATH
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 3001
 CMD npm start
